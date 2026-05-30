@@ -220,13 +220,13 @@ $is_home  = !$is_obat && !$is_resep;
     </div>
     <nav>
         <div class="menu-label">Navigasi</div>
-        <a href="/ujibase_mini/" class="<?= $is_home  ? 'active' : '' ?>">🏠 Dashboard</a>
+        <a href="/ujibase_mini/" class="<?= $is_home  ? 'active' : '' ?>">Dashboard</a>
 
         <div class="menu-label">Master Data</div>
-        <a href="/ujibase_mini/obat/"  class="<?= $is_obat  ? 'active' : '' ?>">💊 Data Obat</a>
+        <a href="/ujibase_mini/obat/"  class="<?= $is_obat  ? 'active' : '' ?>">Data Obat</a>
 
         <div class="menu-label">Transaksi</div>
-        <a href="/ujibase_mini/resep/" class="<?= $is_resep ? 'active' : '' ?>">📋 Data Resep</a>
+        <a href="/ujibase_mini/resep/" class="<?= $is_resep ? 'active' : '' ?>">Data Resep</a>
     </nav>
     <div class="footer">UjiBase Mini v1.0</div>
 </div>
@@ -277,21 +277,21 @@ $resep_terbaru = mysqli_fetch_all($query_terbaru, MYSQLI_ASSOC);
 <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px;">
     <div style="background:#0d9488;color:#fff;border-radius:8px;padding:20px 22px;">
         <div style="font-size:28px;font-weight:bold;"><?= $total_obat ?></div>
-        <div style="font-size:13px;margin-top:4px;opacity:0.85;">💊 Total Jenis Obat</div>
+        <div style="font-size:13px;margin-top:4px;opacity:0.85;">Total Jenis Obat</div>
     </div>
     <div style="background:#0369a1;color:#fff;border-radius:8px;padding:20px 22px;">
         <div style="font-size:28px;font-weight:bold;"><?= $total_resep ?></div>
-        <div style="font-size:13px;margin-top:4px;opacity:0.85;">📋 Total Data Resep</div>
+        <div style="font-size:13px;margin-top:4px;opacity:0.85;">Total Data Resep</div>
     </div>
     <div style="background:#7c3aed;color:#fff;border-radius:8px;padding:20px 22px;">
         <div style="font-size:28px;font-weight:bold;"><?= number_format($total_stok, 0, ',', '.') ?></div>
-        <div style="font-size:13px;margin-top:4px;opacity:0.85;">📦 Total Stok Obat</div>
+        <div style="font-size:13px;margin-top:4px;opacity:0.85;">Total Stok Obat</div>
     </div>
 </div>
 
 <!-- Tabel Resep Terbaru -->
 <div class="card">
-    <div class="card-title">📋 5 Resep Terbaru</div>
+    <div class="card-title">5 Resep Terbaru</div>
     <table>
         <thead>
             <tr>
@@ -341,14 +341,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM obat ORDER BY nama_obat ASC");
 $obat  = mysqli_fetch_all($query, MYSQLI_ASSOC);
 ?>
 
-<div class="page-title">💊 Master Data Obat</div>
+<div class="page-title">Master Data Obat</div>
 <div class="page-subtitle">Kelola stok dan informasi obat yang tersedia</div>
 
 <?php if (isset($_GET['success'])): ?>
-    <div class="alert-success">✅ <?= htmlspecialchars($_GET['success']) ?></div>
+    <div class="alert-success"><?= htmlspecialchars($_GET['success']) ?></div>
 <?php endif; ?>
 <?php if (isset($_GET['error'])): ?>
-    <div class="alert-error">❌ <?= htmlspecialchars($_GET['error']) ?></div>
+    <div class="alert-error"><?= htmlspecialchars($_GET['error']) ?></div>
 <?php endif; ?>
 
 <div style="display:grid; grid-template-columns:1fr 2fr; gap:24px; align-items:start;">
@@ -463,7 +463,7 @@ $row   = mysqli_fetch_assoc($query);
 if (!$row) { header("Location: index.php"); exit; }
 ?>
 
-<div class="page-title">✏️ Edit Data Obat</div>
+<div class="page-title">Edit Data Obat</div>
 <div class="page-subtitle">Perbarui informasi obat yang sudah ada</div>
 
 <div class="card" style="max-width:480px;">
@@ -579,14 +579,14 @@ $query_obat = mysqli_query($koneksi, "SELECT id, kode_obat, nama_obat FROM obat 
 $list_obat  = mysqli_fetch_all($query_obat, MYSQLI_ASSOC);
 ?>
 
-<div class="page-title">📋 Data Resep Medis</div>
+<div class="page-title">Data Resep Medis</div>
 <div class="page-subtitle">Pencatatan resep pasien berdasarkan obat yang tersedia</div>
 
 <?php if (isset($_GET['success'])): ?>
-    <div class="alert-success">✅ <?= htmlspecialchars($_GET['success']) ?></div>
+    <div class="alert-success"><?= htmlspecialchars($_GET['success']) ?></div>
 <?php endif; ?>
 <?php if (isset($_GET['error'])): ?>
-    <div class="alert-error">❌ <?= htmlspecialchars($_GET['error']) ?></div>
+    <div class="alert-error"><?= htmlspecialchars($_GET['error']) ?></div>
 <?php endif; ?>
 
 <div style="display:grid; grid-template-columns:1fr 2fr; gap:24px; align-items:start;">
@@ -724,7 +724,7 @@ $query_obat = mysqli_query($koneksi, "SELECT id, kode_obat, nama_obat FROM obat 
 $list_obat  = mysqli_fetch_all($query_obat, MYSQLI_ASSOC);
 ?>
 
-<div class="page-title">✏️ Edit Data Resep</div>
+<div class="page-title">Edit Data Resep</div>
 <div class="page-subtitle">Perbarui data resep yang sudah ada</div>
 
 <div class="card" style="max-width:520px;">
